@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thread & Co.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h2>Thread &amp; Co.</h2>
+        <nav>
+            <a href="#shop">Shop</a>
+            <a href="#size-chart">Sizes</a>
+            <a href="#about">About</a>
+            <a href="#checkout">Cart (<span id="cart-count">0</span>)</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div>
+                <h1>Elevate Your Everyday Style</h1>
+                <p>Curated sustainable essentials designed to fit your modern lifestyle.</p>
+                <a href="#shop" class="btn">Shop Collection</a>
+            </div>
+            <img src="" alt="Featured Look">
+        </section>
+
+        <section id="shop">
+            <h2>New Arrivals</h2>
+            <div class="product-grid">
+                <article data-id="tee" data-name="Classic Cotton Tee" data-price="1600">
+                    <img src="" alt="Classic Cotton Tee">
+                    <h3>Classic Cotton Tee</h3>
+                    <p>100% organic cotton offering ultimate comfort and structured fit.</p>
+                    <div class="product-details" hidden>
+                        <p>Structured, mid-weight knit that holds its shape wash after wash.</p>
+                    </div>
+                    <div class="product-buy">
+                        <span class="price">₱1,600.00</span>
+                        <select aria-label="Size"><option value="">Size</option><option>S</option><option>M</option><option>L</option><option>XL</option></select>
+                        <button type="button" class="add-to-cart btn">Add</button>
+                    </div>
+                </article>
+
+                <article data-id="denim" data-name="Oversized Denim Jacket" data-price="4800">
+                    <img src="" alt="Denim Jacket">
+                    <h3>Oversized Denim Jacket</h3>
+                    <p>Timeless staple crafted from durable, vintage-wash denim.</p>
+                    <div class="product-details" hidden>
+                        <p>Relaxed, boxy cut with dropped shoulders for easy layering.</p>
+                    </div>
+                    <div class="product-buy">
+                        <span class="price">₱4,800.00</span>
+                        <select aria-label="Size"><option value="">Size</option><option>XS</option><option>S</option><option>M</option><option>L</option></select>
+                        <button type="button" class="add-to-cart btn">Add</button>
+                    </div>
+                </article>
+
+                <article data-id="hoodie" data-name="Relaxed Knit Hoodie" data-price="3700">
+                    <img src="" alt="Knit Hoodie">
+                    <h3>Relaxed Knit Hoodie</h3>
+                    <p>Heavy-knit premium fleece hoodie bringing warmth to chilly days.</p>
+                    <div class="product-details" hidden>
+                        <p>Soft, brushed inside trapping warmth with room to layer.</p>
+                    </div>
+                    <div class="product-buy">
+                        <span class="price">₱3,700.00</span>
+                        <select aria-label="Size"><option value="">Size</option><option>S</option><option>M</option><option>L</option><option>XL</option></select>
+                        <button type="button" class="add-to-cart btn">Add</button>
+                    </div>
+                </article>
+
+                <article data-id="backpack" data-name="Everyday Backpack" data-price="2900">
+                    <img src="" alt="Everyday Backpack">
+                    <h3>Everyday Backpack</h3>
+                    <p>Durable canvas backpack with a padded laptop sleeve.</p>
+                    <div class="product-details" hidden>
+                        <p>Water-resistant fabric built for work, school, and trips.</p>
+                    </div>
+                    <div class="product-buy">
+                        <span class="price">₱2,900.00</span>
+                        <select aria-label="Size"><option>One Size</option></select>
+                        <button type="button" class="add-to-cart btn">Add</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="checkout">
+            <h2>Cart &amp; Checkout</h2>
+            <div class="checkout-layout" id="checkout-layout">
+                <div class="cart-panel">
+                    <h3>Order Summary</h3>
+                    <p id="cart-empty">Your cart is empty.</p>
+                    <ul id="cart-items"></ul>
+                    <div class="totals">
+                        <p>Subtotal: <span id="subtotal">₱0.00</span></p>
+                        <p>Shipping: <span id="shipping">₱0.00</span></p>
+                        <p class="total">Total: <span id="total">₱0.00</span></p>
+                    </div>
+                </div>
+
+                <form id="checkout-form">
+                    <h3>Delivery Details</h3>
+                    <input type="text" id="full-name" placeholder="Full Name" required>
+                    <input type="email" id="checkout-email" placeholder="Email" required>
+                    <input type="text" id="address" placeholder="Address" required>
+                    
+                    <div class="payment-options">
+                        <label><input type="radio" name="payment" value="gcash" checked> GCash</label>
+                        <label><input type="radio" name="payment" value="card"> Card</label>
+                        <label><input type="radio" name="payment" value="cod"> COD</label>
+                    </div>
+
+                    <button type="submit" class="btn" id="place-order" disabled>Place Order</button>
+                </form>
+            </div>
+
+            <div id="order-confirmation" hidden>
+                <h3>Thank you!</h3>
+                <p id="order-message"></p>
+                <a href="#shop">Continue Shopping</a>
+            </div>
+        </section>
+    </main>
+
+    <dialog id="product-modal">
+        <form method="dialog" class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h3 id="modal-title"></h3>
+            <span class="price" id="modal-price"></span>
+            <div id="modal-body"></div>
+            <select id="modal-size"></select>
+            <button type="button" id="modal-add" class="btn">Add to Cart</button>
+        </form>
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+</html>
